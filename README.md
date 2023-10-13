@@ -1,15 +1,15 @@
 # Radiomics CaPTk Pipeline
 This is a MATLAB wrapper pipeline for executing The Cancer Imaging Phenomics Toolkit (CaPTk) (*Pati et al.*)on medical images to extract radiomic features (See *Singh et al.* for a nice review). This pipeline includes four scripts intended to be executed in the following order:
-1. a_generate_captk_lists.m
+1. `a_generate_captk_lists.m`
   * Purpose: To generate input text files for CaPTk
   * Output: four text files with `.list ` extensions (one each for case IDs, image directories, segmentation directories, and output file names for storing extracted features)
-3. b_runCaPTk_locally_script.m
+2. `b_runCaPTk_locally_script.m`
   * Purpose: To run CaPTk sequentially on a dataset with N samples
   * Output: N csv files containing extracted features for each case
-4. c_compile_features_script.m
+3. `c_compile_features_script.m`
   * Purpose: To compile the N csv files from (3) into one spreadsheet (rows: cases, columns: features)
   * Output: 1 csv file containing all N cases and their features
-5. d_feature_processing_script.m
+4. `d_feature_processing_script.m`
   * Purpose: To process raw features by removing NaN and constant features, pruning undesired features, z-score normalizing, and sign-adjusting for increasing order of heterogeneity
   * Output: 1 csv file containing processed features
 Note: It is ideal to harmonize processed features to remove batch effects. See *Horng et al.* for more information.
