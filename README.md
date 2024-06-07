@@ -7,12 +7,12 @@ This is a MATLAB wrapper pipeline for executing The Cancer Imaging Phenomics Too
   * Purpose: To run CaPTk sequentially on a dataset with N samples
   * Output: N csv files containing extracted features for each case
 3. `c_compile_features_script.m`
-  * Purpose: To compile the N csv files from (3) into one spreadsheet (rows: cases, columns: features)
+  * Purpose: To compile the N csv files from (2.) into one spreadsheet (rows: cases, columns: features)
   * Output: 1 csv file containing all N cases and their features
 4. `d_feature_processing_script.m`
   * Purpose: To process raw features by removing NaN and constant features, pruning undesired features, z-score normalizing, and sign-adjusting for increasing order of heterogeneity
   * Output: 1 csv file containing processed features
-Note: It is ideal to harmonize processed features to remove batch effects. See *Horng et al.* for more information.
+Note: It is ideal to harmonize processed features to remove batch effects. See *Horng et al.* below for more information.
 
 # Prerequisites
 1. CaPTk 1.9.0 (available at https://www.nitrc.org/frs/?group_id=1059)
